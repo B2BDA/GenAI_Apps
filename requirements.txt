@@ -1,0 +1,6 @@
+streamlit
+google-generativeai
+python-dotenv
+crewai
+crewai_tools
+chromadb
