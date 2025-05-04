@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 import streamlit as st
 import os
 import google.generativeai as genai
-
+import json
 load_dotenv()
 
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
@@ -29,3 +29,7 @@ response = get_gemini_response(input_prompt, "Please extract the retail merchant
                                     Make it JSON format. \n\n\
                                ")
 print(response)
+
+
+with open('data.json', 'w', encoding='utf-8') as f:
+    json.dump(response, f, ensure_ascii=False, indent=4)
