@@ -1,0 +1,60 @@
+# Entire chat history here --> https://g.co/gemini/share/6db177f6c933
+
+[
+  {
+    "Original Merchant Name": "TENCENT",
+    "Retail Merchant Name": "TENCENT",
+    "Payment Merchant Name": "TENCENT",
+    "Tenor Number": null,
+    "Standardized Merchant Name": "TENCENT"
+  },
+  {
+    "Original Merchant Name": "ALIPAY*TAOBAO",
+    "Retail Merchant Name": "TAOBAO",
+    "Payment Merchant Name": "ALIPAY",
+    "Tenor Number": null,
+    "Standardized Merchant Name": "TAOBAO"
+  },
+  {
+    "Original Merchant Name": "HUDABEU-IPP10",
+    "Retail Merchant Name": "HUDABEU",
+    "Payment Merchant Name": null,
+    "Tenor Number": "10",
+    "Standardized Merchant Name": "HUDABEU"
+  },
+  {
+    "Original Merchant Name": "101WATCHES",
+    "Retail Merchant Name": "101WATCHES",
+    "Payment Merchant Name": null,
+    "Tenor Number": null,
+    "Standardized Merchant Name": "101WATCHES"
+  },
+  {
+    "Original Merchant Name": "CATHAPAC0000000245",
+    "Retail Merchant Name": "CATHAPAC",
+    "Payment Merchant Name": null,
+    "Tenor Number": null,
+    "Standardized Merchant Name": "CATHAY PACIFIC AIRWAYS"
+  },
+  {
+    "Original Merchant Name": "CATHAP",
+    "Retail Merchant Name": "CATHAP",
+    "Payment Merchant Name": null,
+    "Tenor Number": null,
+    "Standardized Merchant Name": "CATHAY PACIFIC AIRWAYS"
+  },
+  {
+    "Original Merchant Name": "FORTRESS-IPP2M",
+    "Retail Merchant Name": "FORTRESS",
+    "Payment Merchant Name": null,
+    "Tenor Number": "2",
+    "Standardized Merchant Name": "FORTRESS"
+  },
+  {
+    "Original Merchant Name": "PEPPERSTON",
+    "Retail Merchant Name": "PEPPERSTON",
+    "Payment Merchant Name": null,
+    "Tenor Number": null,
+    "Standardized Merchant Name": "PEPPERSTONE"
+  }
+]
