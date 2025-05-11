@@ -6,3 +6,4 @@ crewai_tools
 chromadb
 langchain
 ipykernel
+python-dotenv
