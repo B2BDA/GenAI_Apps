@@ -3,9 +3,6 @@
 
 # 1. Import Libs and Set API Keys
 
-# In[17]:
-
-
 import os
 from dotenv import load_dotenv
 from fastapi import FastAPI
@@ -14,6 +11,8 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_groq import ChatGroq
 from langserve import add_routes
 import uvicorn
+from pydantic import BaseModel # Ensure BaseModel is imported
+
 
 load_dotenv()
 
@@ -26,22 +25,16 @@ os.environ['GROQ_API_KEY'] = os.getenv('GROQ_API_KEY')
 
 # 2. Load GROQ Model
 
-# In[4]:
-
-
 model = ChatGroq(model = 'gemma2-9b-it', api_key = os.environ['GROQ_API_KEY'])
 
 
 # 3. Create Prompt Template
 
-# In[13]:
-
-
-generic_template = "Convert the following into {language} language" 
+generic_template = "Convert the following into {language} language"
 prompt = ChatPromptTemplate.from_messages(
 [
     ("system",generic_template),
-    ("user","I am learning LECL and GROQ")
+    ("user","{input}")
 
 ]
 
@@ -50,21 +43,16 @@ prompt = ChatPromptTemplate.from_messages(
 
 # 4. Output Parser
 
-# In[14]:
-
-
 parser = StrOutputParser()
 
 
 # 5. Chain the process
 
-# In[15]:
-
-
 chain = prompt|model|parser
 
-
-# In[ ]:
+# Define the input model for your chain
+class ChainInput(BaseModel):
+    language: str
 
 
 # chain.invoke({"language":"bengali"})
@@ -72,34 +60,20 @@ chain = prompt|model|parser
 
 # 6. App Definition
 
-# In[18]:
-
-
 app = FastAPI(title = "Langchain Server", version= 1.0, description= "Simple API Server using Langchani runnable interfaces")
 
 
 # 7. Chain Routes
 
-# In[21]:
-
-
 add_routes(
     app,
-    chain,
-    path = '/chain'
+    chain.with_types(input_type=ChainInput),  # Use .with_types() here
+    path = '/chain',
+
 )
-
-
-# In[22]:
 
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="localhost", port=8000)
-
-
-# In[ ]:
-
-
-
-
+    # Assuming your script is named 'main.py'
+    uvicorn.run("serve:app", host="127.0.0.1", port=8000, reload=True)

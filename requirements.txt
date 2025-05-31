@@ -21,7 +21,7 @@ faiss-cpu
 langchain_chroma
 langchain_groq
 langchain_core
-fastapi
+fastapi[standard]
 uvicorn
 langserve[all]
 sse_starlette
