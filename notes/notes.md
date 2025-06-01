@@ -17,3 +17,9 @@ Commonly occuring token will have lower Id number.
 Starting words token will not capture space. What am I doing. What is capture without trailing space indicating a questions.
 leading words token will capture spaces. I am fine. <space>fine is captured as token means it is a statement.
 What, <space>what and <space>What will have different token IDs. 
+
+Pricing is based on the # of tokens we consume. Larger token means more pricy models.
+Input and output tokens are charged seperately.
+
+Context window is how much text at a time it can process without failure.
+128K
